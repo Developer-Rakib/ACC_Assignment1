@@ -60,6 +60,7 @@ async function postUser(req, res) {
           });
      }
 }
+
 async function updateUser(req, res) {
      const { name, gender, address, contact, photoURL, _id } = req.body;
 }
