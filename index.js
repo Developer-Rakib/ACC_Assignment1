@@ -12,7 +12,7 @@ app.use(cors())
 app.set("view engine", "ejs")
 
 
-app.use('/api/v1/user', router)
+app.use('/user', router)
 
 
 app.get("/", (req, res) => res.send("Welcome to ACC Assignment1"))
