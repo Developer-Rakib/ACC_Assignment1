@@ -1,13 +1,5 @@
 [
   {
-    "id": "1",
-    "name": "Mir Hussain",
-    "gender": "Male",
-    "contact": "12345678901",
-    "address": "Dhaka",
-    "photoURL": "https://i.picsum.photos/id/316/200/300.jpg?hmac=sq0VBO6H0wGg9Prod7MVUUB_7B91kmD5E1X1TRSo66U"
-  },
-  {
     "id": "2",
     "name": "Jhankar Mahbub",
     "gender": "Male",
@@ -72,11 +64,11 @@
     "photoURL": "https:xxc//i.picsum.photos/id/316/200/300.jpg?hmac=sq0VBO6H0wGg9Prod7MVUUB_7B91kmD5E1X1TRSo66U"
   },
   {
-    "id": "10",
-    "name": "rahat",
+    "id": "1",
     "gender": "Male",
-    "contact": "58445454555",
-    "address": "ctg",
-    "photoURL": "https:xxc//i.picsum.photos/id/316/200/300.jpg?hmac=sq0VBO6H0wGg9Prod7MVUUB_7B91kmD5E1X1TRSo66U"
+    "name": "rahat",
+    "contact": "12345678901",
+    "address": "Dhaka",
+    "photoURL": "https://i.picsum.photos/id/316/200/300.jpg?hmac=sq0VBO6H0wGg9Prod7MVUUB_7B91kmD5E1X1TRSo66U"
   }
 ]
