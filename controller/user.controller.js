@@ -141,7 +141,6 @@ async function bulkUpdate(req, res) {
           });
      }
      else {
-
           const { Id, gender, name, contact, address, photoUrl } = req.body
           const updatedUser = { Id, gender, name, contact, address, photoUrl }
 
@@ -163,17 +162,8 @@ async function bulkUpdate(req, res) {
                myObject = myObject.map(data => data.Id == user.Id ? { ...updatedUser, Id: user.Id } : data)
           }
 
-          writeFileSync(file, JSON.stringify(parsedData))
+          writeFileSync(file, JSON.stringify(myObject))
           res.status(201).json({ message: "Users data updated successfully" })
-
-          // const ids = users.map(user => user.id)
-          // ids.forEach(id => {
-          //      const existUser = myObject.filter(user => user.id == id)
-          //      const { id, gender, name, contact, address, photoURL } = req.body;
-
-
-          // })
-          // res.send(ids)
      }
 }
 
