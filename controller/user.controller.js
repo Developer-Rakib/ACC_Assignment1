@@ -25,38 +25,62 @@ async function getRandomUser(req, res) {
 }
 
 async function postUser(req, res) {
-     const data = fs.readFileSync("data.json");
+     const data = fs.readFileSync("user.json");
      const myObject = JSON.parse(data);
      const newUser = req.body;
+
      // validating req.body data
-
-     const validation = myObject.find(
-          (user) =>
-               user.id === newUser.id ||
-               user.name === newUser.name ||
-               user.contact === newUser.contact ||
-               user.address === newUser.address ||
-               user.photoUrl === newUser.photoUrl ||
-               Object.keys(user) === Object.keys(newUser)
-     );
-
-     // const exisitingKeys = Object.keys(myObject);
-     // console.log(exisitingKeys);
-
-     // console.log(validation);
-     if (validation) {
-          res.send("Data exists in json file");
-     } else {
+     const { id, gender, name, contact, address, photoURL } = req.body;
+     if (!id) {
+          res.status(400).json({
+               success: false,
+               message: "id is not found",
+          });
+     }
+     else if (!gender) {
+          res.status(400).json({
+               success: false,
+               message: "gender is not found",
+          });
+     }
+     else if (!name) {
+          res.status(400).json({
+               success: false,
+               message: "name is not found",
+          });
+     }
+     else if (!contact) {
+          res.status(400).json({
+               success: false,
+               message: "contact is not found",
+          });
+     }
+     else if (!address) {
+          res.status(400).json({
+               success: false,
+               message: "address is not found",
+          });
+     }
+     else if (!photoURL) {
+          res.status(400).json({
+               success: false,
+               message: "photoURL is not found",
+          });
+     }
+     else {
           myObject.push(newUser);
           const newData2 = JSON.stringify(myObject);
-
           fs.writeFile("user.json", newData2, (err) => {
                if (err) {
                     console.log(err.message);
                     return;
                }
 
-               res.send("Successfully added data to json file!");
+               res.status(200).json({
+                    success: true,
+                    message: "Successfully added data to json file!",
+               });
+               // res.send("Successfully added data to json file!");
           });
      }
 }
